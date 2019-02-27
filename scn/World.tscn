@@ -1,0 +1,576 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://scn/World.gd" type="Script" id=1]
+[ext_resource path="res://scn/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scn/levels/Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scn/LevelTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scn/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scn/KillTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scn/levels/Level2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scn/levels/Level3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scn/levels/Level4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scn/levels/Level5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scn/levels/Level6.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scn/levels/Level7.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scn/levels/Level8.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scn/levels/Level9.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scn/levels/Level11.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/thanks_message.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 140 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 150 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 910, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 410 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 450 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1130, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 370 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 890, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12, 154 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 810, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 500, 10 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 500, 10 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+custom_solver_bias = 0.0
+extents = Vector2( 220, 10 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 290, 10 )
+
+[sub_resource type="RectangleShape2D" id=15]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 370 )
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 490, 10 )
+
+[sub_resource type="RectangleShape2D" id=17]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 70 )
+
+[sub_resource type="RectangleShape2D" id=18]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 180 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+custom_solver_bias = 0.0
+extents = Vector2( 920, 10 )
+
+[sub_resource type="RectangleShape2D" id=20]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 200 )
+
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 190 )
+
+[sub_resource type="RectangleShape2D" id=22]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 210 )
+
+[sub_resource type="RectangleShape2D" id=23]
+
+custom_solver_bias = 0.0
+extents = Vector2( 71, 10 )
+
+[sub_resource type="RectangleShape2D" id=24]
+
+custom_solver_bias = 0.0
+extents = Vector2( 90, 130 )
+
+[sub_resource type="Animation" id=25]
+
+resource_name = "Show Message"
+length = 7.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ThanksMessage:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="World" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+checkpoint_path = NodePath("Level1/Checkpoint")
+
+[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -248.141, 123.282 )
+increased_jump_force_scale = 1.6
+
+[node name="Level1" parent="." index="1" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 650, 340 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelTrigger" parent="Level1" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 565, 40 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level1/LevelTrigger" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Checkpoint" parent="Level1" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -571.993, -78.078 )
+value = 0
+level_node = NodePath("..")
+
+[node name="KillTrigger" parent="Level1" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( -30, 370 )
+
+[node name="Level2" parent="." index="2" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+position = Vector2( 2020, 660 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelTrigger" parent="Level2" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( -726, -300 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level2/LevelTrigger" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Checkpoint" parent="Level2" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -680, -190 )
+value = 1
+level_node = NodePath("..")
+
+[node name="KillTrigger2" parent="Level2" index="8" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( -140, 460 )
+
+[node name="CollisionShape2D" parent="Level2/KillTrigger2" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="LevelTrigger3" parent="Level2" index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 720, 30 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level2/LevelTrigger3" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="Level3" parent="." index="3" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+position = Vector2( 3840, 838 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelTrigger2" parent="Level3" index="9" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -970, -148 )
+checkpoint_node = NodePath("../Checkpoint2")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level3/LevelTrigger2" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="Checkpoint2" parent="Level3" index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -900, -318 )
+value = 2
+level_node = NodePath("..")
+
+[node name="KillTrigger3" parent="Level3" index="11" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( -100, 612 )
+
+[node name="CollisionShape2D" parent="Level3/KillTrigger3" index="0"]
+
+shape = SubResource( 6 )
+
+[node name="LevelTrigger" parent="Level3" index="12" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 978, -228 )
+checkpoint_node = NodePath("../Checkpoint2")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level3/LevelTrigger" index="0"]
+
+shape = SubResource( 7 )
+
+[node name="Level4" parent="." index="4" instance=ExtResource( 9 )]
+
+editor/display_folded = true
+position = Vector2( 5710, 651 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="KillTrigger" parent="Level4" index="7" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( 600.345, 525.257 )
+
+[node name="CollisionShape2D" parent="Level4/KillTrigger" index="0"]
+
+shape = SubResource( 8 )
+
+[node name="LevelTrigger" parent="Level4" index="8" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -778, 169 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level4/LevelTrigger" index="0"]
+
+shape = SubResource( 9 )
+
+[node name="Checkpoint" parent="Level4" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( -708.134, 283.938 )
+value = 4
+level_node = NodePath("..")
+
+[node name="LevelTrigger2" parent="Level4" index="18" instance=ExtResource( 4 )]
+
+position = Vector2( 3, -471 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level4/LevelTrigger2" index="0"]
+
+shape = SubResource( 10 )
+
+[node name="Level5" parent="." index="5" instance=ExtResource( 10 )]
+
+editor/display_folded = true
+position = Vector2( 5750, -170 )
+
+[node name="LevelTrigger" parent="Level5" index="6" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -10, 290 )
+checkpoint_node = NodePath("../../Level4/Checkpoint")
+level_node = NodePath("..")
+
+[node name="CollisionShape2D" parent="Level5/LevelTrigger" index="0"]
+
+shape = SubResource( 11 )
+
+[node name="LevelTrigger2" parent="Level5" index="8" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 0, -270 )
+checkpoint_node = NodePath("../../Level4/Checkpoint")
+level_node = NodePath("..")
+
+[node name="CollisionShape2D" parent="Level5/LevelTrigger2" index="0"]
+
+shape = SubResource( 12 )
+
+[node name="Level6" parent="." index="6" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( 5610, -790 )
+
+[node name="LevelTrigger" parent="Level6" index="2" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 140, 260 )
+checkpoint_node = NodePath("../../Level4/Checkpoint")
+level_node = NodePath("..")
+
+[node name="CollisionShape2D" parent="Level6/LevelTrigger" index="0"]
+
+shape = SubResource( 13 )
+
+[node name="KillTrigger" parent="Level6" index="3" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( 940, 350 )
+
+[node name="KillTrigger2" parent="Level6" index="4" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( -660, 350 )
+
+[node name="CollisionShape2D" parent="Level6/KillTrigger2" index="0"]
+
+shape = SubResource( 14 )
+
+[node name="LevelTrigger2" parent="Level6" index="5" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -460, -320 )
+checkpoint_node = NodePath("../../Level4/Checkpoint")
+level_node = NodePath("..")
+
+[node name="CollisionShape2D" parent="Level6/LevelTrigger2" index="0"]
+
+shape = SubResource( 15 )
+
+[node name="Level7" parent="." index="7" instance=ExtResource( 12 )]
+
+editor/display_folded = true
+position = Vector2( 4590, -1007 )
+
+[node name="Checkpoint" parent="Level7" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 350, 237 )
+value = 7
+level_node = NodePath("..")
+
+[node name="KillTrigger" parent="Level7" index="13" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( -417, 314 )
+
+[node name="CollisionShape2D" parent="Level7/KillTrigger" index="0"]
+
+shape = SubResource( 16 )
+
+[node name="LevelTrigger" parent="Level7" index="14" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 460, 197 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level7/LevelTrigger" index="0"]
+
+shape = SubResource( 17 )
+
+[node name="LevelTrigger2" parent="Level7" index="15" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -480, -253 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level7/LevelTrigger2" index="0"]
+
+shape = SubResource( 18 )
+
+[node name="Level8" parent="." index="8" instance=ExtResource( 13 )]
+
+editor/display_folded = true
+position = Vector2( 3240, -1460 )
+
+[node name="Checkpoint" parent="Level8" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 710, 350 )
+value = 8
+level_node = NodePath("..")
+
+[node name="KillTrigger" parent="Level8" index="10" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( -520, 490 )
+
+[node name="CollisionShape2D" parent="Level8/KillTrigger" index="0"]
+
+shape = SubResource( 19 )
+
+[node name="LevelTrigger" parent="Level8" index="11" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 770, 180 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level8/LevelTrigger" index="0"]
+
+shape = SubResource( 20 )
+
+[node name="LevelTrigger2" parent="Level8" index="14" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( -790, -360 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level8/LevelTrigger2" index="0"]
+
+shape = SubResource( 21 )
+
+[node name="Level9" parent="." index="9" instance=ExtResource( 14 )]
+
+editor/display_folded = true
+position = Vector2( 1569, -1730 )
+
+[node name="Checkpoint" parent="Level9" index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 781, 60 )
+value = 9
+level_node = NodePath("..")
+
+[node name="LevelTrigger" parent="Level9" index="14" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 781, -110 )
+checkpoint_node = NodePath("../Checkpoint")
+level_node = null
+
+[node name="CollisionShape2D" parent="Level9/LevelTrigger" index="0"]
+
+shape = SubResource( 22 )
+
+[node name="Level11" parent="." index="10" instance=ExtResource( 15 )]
+
+editor/display_folded = true
+position = Vector2( 1369, -730 )
+
+[node name="LevelTrigger" parent="Level11" index="11" instance=ExtResource( 4 )]
+
+position = Vector2( -9, -470 )
+checkpoint_node = NodePath("../../Level9/Checkpoint")
+level_node = NodePath("..")
+
+[node name="CollisionShape2D" parent="Level11/LevelTrigger" index="0"]
+
+shape = SubResource( 23 )
+
+[node name="EndTrigger" type="Area2D" parent="." index="11"]
+
+position = Vector2( 1370, -100 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndTrigger" index="0"]
+
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EndSpawn" type="Node2D" parent="." index="12"]
+
+position = Vector2( 140, -180 )
+
+[node name="ThanksMessage" type="Sprite" parent="." index="13"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 510, 500 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="14"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/Show Message" = SubResource( 25 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+
+[editable path="Level1/LevelTrigger"]
+[editable path="Level1/KillTrigger"]
+[editable path="Level2/LevelTrigger"]
+[editable path="Level2/KillTrigger2"]
+[editable path="Level2/LevelTrigger3"]
+[editable path="Level3/LevelTrigger2"]
+[editable path="Level3/KillTrigger3"]
+[editable path="Level3/LevelTrigger"]
+[editable path="Level4/KillTrigger"]
+[editable path="Level4/LevelTrigger"]
+[editable path="Level4/LevelTrigger2"]
+[editable path="Level5/LevelTrigger"]
+[editable path="Level5/LevelTrigger2"]
+[editable path="Level6/LevelTrigger"]
+[editable path="Level6/KillTrigger"]
+[editable path="Level6/KillTrigger2"]
+[editable path="Level6/LevelTrigger2"]
+[editable path="Level7/KillTrigger"]
+[editable path="Level7/LevelTrigger"]
+[editable path="Level7/LevelTrigger2"]
+[editable path="Level8/KillTrigger"]
+[editable path="Level8/LevelTrigger"]
+[editable path="Level8/LevelTrigger2"]
+[editable path="Level9/LevelTrigger"]
+[editable path="Level11/LevelTrigger"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scn/props/RegularPlatform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scn/props/SpeedPlatform.gd" type="Script" id=2]
+[ext_resource path="res://assets/arrow_green.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 100, 5 )
+
+[node name="SpeedPlatform" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+direction = 1
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, -10 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="IconsOn" type="Node2D" parent="." index="3"]
+
+[node name="arrow_green" type="Sprite" parent="IconsOn" index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="arrow_green2" type="Sprite" parent="IconsOn" index="1"]
+
+position = Vector2( -50, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="arrow_green3" type="Sprite" parent="IconsOn" index="2"]
+
+position = Vector2( 50, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+
